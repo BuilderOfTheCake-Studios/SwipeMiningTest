@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://cbkdfwl1c0lmq"]
+
+[ext_resource type="Texture2D" uid="uid://xrj0b6ybfdvv" path="res://art/luigi drill.png" id="1_avihb"]
+[ext_resource type="Script" path="res://scenes/luigi.gd" id="1_vlxha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cijg0"]
+atlas = ExtResource("1_avihb")
+region = Rect2(0, 0, 44, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnhm3"]
+atlas = ExtResource("1_avihb")
+region = Rect2(47, 0, 44, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46p23"]
+atlas = ExtResource("1_avihb")
+region = Rect2(94, 0, 44, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mybx"]
+atlas = ExtResource("1_avihb")
+region = Rect2(141, 0, 44, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nofag"]
+atlas = ExtResource("1_avihb")
+region = Rect2(188, 0, 44, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rruei"]
+atlas = ExtResource("1_avihb")
+region = Rect2(235, 0, 44, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pb5n"]
+atlas = ExtResource("1_avihb")
+region = Rect2(282, 0, 44, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwjle"]
+atlas = ExtResource("1_avihb")
+region = Rect2(329, 0, 44, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lx6vw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cijg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnhm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46p23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mybx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nofag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rruei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pb5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwjle")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mkb4t"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_vlxha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_lx6vw")
+frame_progress = 0.22637
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(23, -13)
+scale = Vector2(1.02347, 0.480632)
+shape = SubResource("CircleShape2D_mkb4t")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
